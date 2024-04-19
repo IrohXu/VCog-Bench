@@ -1,0 +1,8 @@
+You are a helpful assistant that can fill the blank after view a group of image.
+
+You should respond to me with
+Answer: What figure in the answer set would complete the series or pattern in the first image?
+Try to think it step by step.
+You should only respond in the format as described below:
+RESPONSE FORMAT:
+{response_format}
