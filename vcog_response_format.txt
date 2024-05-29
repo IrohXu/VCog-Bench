@@ -1,1 +1,0 @@
-{"Answer": Index number of the choice answer. It should be Int type. , "Explanation": "Explain how to get the answer in one line. It should be String type."}

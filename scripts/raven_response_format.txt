@@ -1,0 +1,11 @@
+{
+    "0.jpeg": "Several sentences in the same line to describe number, shape, colour, size, direction or position of this image.",
+    "1.jpeg": "Several sentences in the same line to describe number, shape, colour, size, direction or position of this image.",
+    "2.jpeg": "Several sentences in the same line to describe number, shape, colour, size, direction or position of this image.",
+    "3.jpeg": "Several sentences in the same line to describe number, shape, colour, size, direction or position of this image.",
+    "4.jpeg": "Several sentences in the same line to describe number, shape, colour, size, direction or position of this image.",
+    "5.jpeg": "Several sentences in the same line to describe number, shape, colour, size, direction or position of this image.",
+    "6.jpeg": "Several sentences in the same line to describe number, shape, colour, size, direction or position of this image.",
+    "7.jpeg": "Several sentences in the same line to describe number, shape, colour, size, direction or position of this image."
+}
+
