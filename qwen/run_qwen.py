@@ -12,7 +12,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument(
     "--dataset-path", type=str, default="/media/mayson/Data/datasets/vcog/VCog/benchmark/marsvqa"
 )
-parser.add_argument("--output_path", type=str, default="/media/mayson/Data/github/VCog/qwen/results")
+parser.add_argument("--output-path", type=str, default="/media/mayson/Data/github/VCog/qwen/results")
 parser.add_argument("--system-template", type=str, default="/media/mayson/Data/github/VCog/qwen/prompt_raven.txt")
 
 args = parser.parse_args()
