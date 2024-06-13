@@ -56,7 +56,7 @@ device_map = infer_auto_device_map(
     max_memory={i: max_memory_per_gpu for i in range(num_gpus)},
     no_split_module_classes=["CogVLMDecoderLayer"]
 )
-model = load_checkpoint_and_dispatch(model, MODEL_PATH, device_map=device_map, dtype=TORCH_TYPE, offload_folder="/home/xucao2/VLM_experiment/checkpoints/offload_folder")
+model = load_checkpoint_and_dispatch(model, MODEL_PATH, device_map=device_map, dtype=TORCH_TYPE, offload_folder="")
 model = model.eval()
 
 text_only_template = "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER: {} ASSISTANT:"

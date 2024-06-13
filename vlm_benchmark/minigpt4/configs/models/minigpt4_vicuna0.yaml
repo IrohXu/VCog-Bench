@@ -15,7 +15,7 @@ model:
   # generation configs
   prompt: ""
 
-  llama_model: "/home/xucao2/VLM_experiment/checkpoints/vicuna"
+  llama_model: "./checkpoints/vicuna"
 
 preprocess:
     vis_processor:
