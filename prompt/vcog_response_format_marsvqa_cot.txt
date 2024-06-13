@@ -1,0 +1,3 @@
+Reasoning: Generate reasoning based on the instruction.
+
+Answer: {"answer": Index number of the choice answer. It should be Int type.}

@@ -1,116 +1,15 @@
-# VCog: Can Multimodal LLMs Learn Visual Cognition?
+# VCog-Bench: Benchmarking Multimodal LLMs on Abstract Visual Reasoning
 
 ### Background
-
+Recently, Multimodal Large Language Models (MLLMs) have shown great promise in language-guided perceptual tasks such as recognition, segmentation, and object detection. However, their effectiveness in addressing visual cognition problems that require high-level reasoning is not well-established. One such challenge is abstract visual reasoning (AVR) -- the cognitive ability to discern relationships among patterns in a set of images and extrapolate to predict subsequent patterns. This skill is crucial during the early neurodevelopmental stages of children. Inspired by the AVR tasks in Raven’s Progressive Matrices (RPM) and Wechsler Intelligence Scale for Children (WISC), we propose a new dataset MaRs-VQA and a new benchmark VCog-Bench containing three datasets to evaluate the zero-shot AVR capability of MLLMs and compare their performance with existing human intelligent investigation. Our comparative experiments with different open-source and closed-source MLLMs on the VCog-Bench revealed a gap between MLLMs and human intelligence, highlighting the visual cognitive limitations of current MLLMs. We believe that the public release of VCog-Bench, consisting of MaRs-VQA, and the inference pipeline will drive progress toward the next generation of MLLMs with human-like visual cognition abilities.     
 
 ### Build
 
+```
+pip install -r requirements.txt 
+```
 
 ### VCog Benchmark
-
-
-```
-python mllm_inference.py --llm "gpt4v-cot-raven" \
-            --model-weight 'gpt-4-turbo' \
-            --max-tokens 384 \
-            --dataset-path '/home/xucao2/VLM_experiment/VCog/testset/raven' \
-            --system-template '/home/xucao2/VLM_experiment/VCog/vcog_prompt_image_raven_cot.txt' \
-            --response-format '/home/xucao2/VLM_experiment/VCog/vcog_response_format_raven_cot.txt' \
-            --choice 'image'
-```
-
-```
-python mllm_inference.py --llm "gpt4v-0shot-raven-text" \
-            --model-weight 'gpt-4-turbo' \
-            --max-tokens 1024 \
-            --dataset-path '/home/xucao2/VLM_experiment/VCog/testset/raven' \
-            --system-template '/home/xucao2/VLM_experiment/VCog/vcog_prompt_image_raven.txt' \
-            --response-format '/home/xucao2/VLM_experiment/VCog/vcog_response_format_raven.txt' \
-            --choice 'context'
-```
-
-```
-python mllm_inference.py --llm "claude-3-opus-cot-raven" \
-            --model-weight 'claude-3-opus-20240229' \
-            --max-tokens 1024 \
-            --dataset-path '/home/xucao2/VLM_experiment/VCog/testset/raven' \
-            --system-template '/home/xucao2/VLM_experiment/VCog/vcog_prompt_image_raven_cot.txt' \
-            --response-format '/home/xucao2/VLM_experiment/VCog/vcog_response_format_raven_cot.txt' \
-            --choice 'image'
-```
-
-```
-python mllm_evaluate.py --json-path '/home/xucao2/VLM_experiment/VCog/results/gpt4o-0shot-marsvqa-text.json'
-```
-
-```
-python mllm_inference.py --llm "claude-3-opus-0shot-marsvqa-text" \
-            --model-weight 'claude-3-opus-20240229' \
-            --max-tokens 512 \
-            --dataset-path '/home/xucao2/VLM_experiment/VCog/testset/marsvqa' \
-            --system-template '/home/xucao2/VLM_experiment/VCog/prompt/vcog_prompt_image_marsvqa.txt' \
-            --response-format '/home/xucao2/VLM_experiment/VCog/prompt/vcog_response_format_marsvqa.txt' \
-            --choice 'context'
-```
-
-```
-python mllm_inference.py --llm "claude-3-opus-0shot-marsvqa" \
-            --model-weight 'claude-3-opus-20240229' \
-            --max-tokens 512 \
-            --dataset-path '/home/xucao2/VLM_experiment/VCog/testset/marsvqa' \
-            --system-template '/home/xucao2/VLM_experiment/VCog/prompt/vcog_prompt_image_marsvqa.txt' \
-            --response-format '/home/xucao2/VLM_experiment/VCog/prompt/vcog_response_format_marsvqa.txt' \
-            --choice 'image'
-```
-
-```
-python mllm_inference_cvr.py --llm "claude-3-haiku-0shot-cvr" \
-            --model-weight 'claude-3-haiku-20240307' \
-            --max-tokens 512 \
-            --dataset-path '/home/xucao2/VLM_experiment/VCog/testset/cvr' \
-            --system-template '/home/xucao2/VLM_experiment/VCog/prompt/vcog_prompt_image_cvr.txt' \
-            --response-format '/home/xucao2/VLM_experiment/VCog/prompt/vcog_response_format_cvr.txt' \
-            --choice 'image'
-```
-
-```
-python mllm_inference_cvr.py --llm "gpt4o-0shot-cvr" \
-            --model-weight 'gpt-4o' \
-            --max-tokens 512 \
-            --dataset-path '/home/xucao2/VLM_experiment/VCog/testset/cvr' \
-            --system-template '/home/xucao2/VLM_experiment/VCog/prompt/vcog_prompt_image_cvr.txt' \
-            --response-format '/home/xucao2/VLM_experiment/VCog/prompt/vcog_response_format_cvr.txt' \
-            --choice 'image'
-```
-
-
-
-
-```
-python mllm_inference.py --llm "gpt4-0shot" \
-            --model-weight 'gpt-4o' \
-            --max-tokens 256 \
-            --dataset-path '/home/xucao2/VLM_experiment/VCog/dataset/task1/tf1/md' \
-            --choice 'image'
-```
-
-```
-python mllm_inference.py --llm "gpt4-fewshot" \
-            --model-weight 'gpt-4-turbo' \
-            --max-tokens 1024 \
-            --dataset-path '/home/xucao2/VLM_experiment/VCog/dataset/example' \
-            --choice 'image' \
-            --few-shot \
-            --shot-num 3 \
-            --few-shot-path './dataset/fewshot'
-```
-
-```
-python mllm_evaluate.py --json-path '/home/xucao2/VLM_experiment/VCog/gpt4-0shot-raven-center_single.json'
-```
-
-### Methods
-
 
 
 

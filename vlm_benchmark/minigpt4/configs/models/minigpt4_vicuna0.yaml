@@ -15,7 +15,7 @@ model:
   # generation configs
   prompt: ""
 
-  llama_model: "please set this value to the path of vicuna model"
+  llama_model: "/home/xucao2/VLM_experiment/checkpoints/vicuna"
 
 preprocess:
     vis_processor:

@@ -4,7 +4,7 @@ import json
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('--json-path', type=str, default='/home/xucao2/VLM_experiment/VCog/dataset/example')
+parser.add_argument('--json-path', type=str, default='./results/gpt4o-0shot-marsvqa.json')
 
 if __name__ == "__main__":
     args = parser.parse_args()

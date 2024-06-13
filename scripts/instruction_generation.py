@@ -33,7 +33,7 @@ def add_image_input(img, context):
     return out
 
 if __name__ == "__main__":
-    example_path = "/home/xucao2/VLM_experiment/VCog/testset/marsvqa"
+    example_path = ""
     
     for sample in os.listdir(example_path):
         sample_path = os.path.join(example_path, sample)
@@ -52,8 +52,8 @@ if __name__ == "__main__":
             print(os.path.join(choice_txt_path, "annotation.json"))
             continue
         
-        system_template = load_prompt(f"/home/xucao2/VLM_experiment/VCog/scripts/marsvqa_prompt.txt")
-        response_format = load_prompt(f"/home/xucao2/VLM_experiment/VCog/scripts/marsvqa_response_format.txt")
+        system_template = load_prompt(f"./scripts/marsvqa_prompt.txt")
+        response_format = load_prompt(f"./scripts/marsvqa_response_format.txt")
         
         system_message_prompt = SystemMessagePromptTemplate.from_template(system_template)
         
@@ -74,7 +74,7 @@ if __name__ == "__main__":
         print(output)
         
         output_json = json.loads(output)
-        output_json = json.dumps(output_json, indent=8)
+        output_json = json.dumps(output_json, indent=4)
         
         with open(os.path.join(choice_txt_path, "annotation.json"), "w") as out_file:
             out_file.write(output_json)

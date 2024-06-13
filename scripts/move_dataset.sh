@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define the source and destination paths
-source_folder="/home/xucao2/VLM_experiment/VCog/dataset/task1/tf3/pd"
-destination_folder="/home/xucao2/VLM_experiment/VCog/testset/marsvqa"
+source_folder=""
+destination_folder=""
 
 # Create the destination folder if it doesn't exist
 mkdir -p "$destination_folder"
