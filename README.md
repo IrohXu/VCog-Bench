@@ -11,5 +11,37 @@ pip install -r requirements.txt
 
 ### VCog Benchmark
 
+Export Keys from closed-sourse models.    
+
+```
+export OPENAI_API_KEY=xxx
+export ANTHROPIC_API_KEY=xxx
+export GOOGLE_API_KEY=xxx
+```
+
+Test MLLMs with multi-images input in the MaRs-VQA dataset in VCog-Bench:    
+
+```
+python mllm_inference.py --llm "gpt4o-cot" \
+            --model-weight 'gpt-4o' \
+            --max-tokens 1024 \
+            --dataset-path '' \
+            --system-template './prompt/vcog_prompt_image_marsvqa_cot.txt' \
+            --response-format './prompt/vcog_response_format_marsvqa_cot.txt' \
+            --choice 'image'
+```
+
+Test MLLMs with question image - language options input in the MaRs-VQA dataset in VCog-Bench:    
+
+```
+python mllm_inference.py --llm "gpt4o-cot" \
+            --model-weight 'gpt-4o' \
+            --max-tokens 1024 \
+            --dataset-path '' \
+            --system-template './prompt/vcog_prompt_image_marsvqa_cot.txt' \
+            --response-format './prompt/vcog_response_format_marsvqa_cot.txt' \
+            --choice 'context'
+```
+
 
 
